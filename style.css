@@ -11,7 +11,15 @@
   --font-heading: 'Big Shoulders Display', cursive;
 }
 
-.attribution { font-size: 11px; text-align: center; }
+.attribution { 
+  font-size: 11px; 
+  text-align: center;
+  width: 100%;
+  margin: 1rem 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
 .attribution a { color: hsl(228, 45%, 44%); }
 
 *, *::after, *::before {
@@ -20,6 +28,7 @@
 
 body {
   font-family: var(--font-content);
+  margin: 0;
 }
 
 .bg-cyan {
@@ -55,19 +64,20 @@ body {
 .wrapper {
   display: flex;
   height: 100vh;
-  width: 100vw;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .container {
   max-width: 1440px;
   margin: 0 auto;
-
+  width: 90%;
 }
 
 .card-box {
   display: flex;
+  justify-content: center;
 }
 
 .card {
@@ -96,19 +106,22 @@ body {
 
 @media (max-width: 800px) {
   .wrapper {
-    align-items: start;
-  }
-
-  .card-box {
     display: block;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
   }
 
   .card:first-child {
     border-top-left-radius: 0.7rem;
     border-top-right-radius: 0.7rem;
     border-bottom-left-radius: 0;
+  }
+
+  .row {
+    display: block;
+    margin: 2rem 0;
+  }
+
+  .card {
+    margin: 0 auto;
   }
   
   .card:last-child {
@@ -123,5 +136,10 @@ body {
 
   .card__title {
     margin-top: 0;
+  }
+
+  .attribution {
+    position: static;
+    padding-bottom: 2rem;
   }
 }
